@@ -1,0 +1,3 @@
+packages:
+  - "services/*"
+  - "packages/*" # This defines the packages included in the workspace to be able to have common packages shared across services
