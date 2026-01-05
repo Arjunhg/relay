@@ -12,7 +12,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "express": "^5.2.1",
     "pino": "^10.1.0",
     "zod": "^4.3.5"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6"
   }
 }
