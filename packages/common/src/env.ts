@@ -9,6 +9,21 @@ interface EnvOptions {
 }
 
 type SchemaOutput<TSchema extends ZodRawShape> = ZodObject<TSchema>["_output"];
+/* TSchema is inferred from the argument you pass.
+  const envSchema = z.object({
+    PORT: z.coerce.number(),
+    NODE_ENV: z.string(),
+  });
+
+  createEnv(envSchema);
+
+Then:
+  TSchema = {
+    PORT: ZodNumber;
+    NODE_ENV: ZodString;
+  }
+*/
+/** <TSchema extends ZodRawShape>: TSchema must be an object whose values are Zod schemas */
 
 export const createEnv = <TSchema extends ZodRawShape>(
   schema: ZodObject<TSchema>,
